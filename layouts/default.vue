@@ -2,6 +2,11 @@
 import { useStore } from "~~/store/state";
 
 const store = useStore();
+const nuxtApp = useNuxtApp();
+
+nuxtApp.hook("page:finish", () => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>

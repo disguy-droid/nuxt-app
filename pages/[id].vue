@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { useStore } from "~~/store/state";
 
-const store = useStore();
 const route = useRoute();
+const store = useStore();
 
 const computedUser = computed(() => {
   return store.users.filter((user) => {
-    if (user.id === Number(route.query.id)) {
+    if (user.id === Number(route.params.id)) {
       return user;
     }
   });

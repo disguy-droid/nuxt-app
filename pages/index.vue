@@ -2,17 +2,6 @@
 import { useStore } from "~~/store/state";
 
 const store = useStore();
-const router = useRouter();
-
-const getUserDetails = (id: number) => {
-  router.push({
-    path: "/about",
-    name: "about",
-    query: {
-      id: id,
-    },
-  });
-};
 
 onMounted(() => {
   store.fetchUser();
@@ -61,9 +50,9 @@ onMounted(() => {
         v-for="user in store.users"
         :key="user.id"
       >
-        <h2 @click="getUserDetails(user.id)" class="w-1/2 cursor-pointer">
+        <nuxt-link :href="`/${user.id}`" @click="" class="w-1/2 cursor-pointer">
           {{ user.name }}
-        </h2>
+        </nuxt-link>
         <h3 class="w-1/2 mr-2">{{ user.email }}</h3>
       </div>
     </div>
