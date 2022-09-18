@@ -20,7 +20,7 @@ const toggleTheme = () => {
       }"
       class="text-3xl font-black uppercase"
     >
-      User Datas
+      Datas
     </h1>
     <div>
       <button
